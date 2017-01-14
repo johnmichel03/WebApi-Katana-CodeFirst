@@ -1,0 +1,83 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JM.KPMG.PC.Model", "JM.KPMG.PC.Model\JM.KPMG.PC.Model.csproj", "{6576CDAB-015B-48D9-AFFD-8F0430A4D44A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JM.KPMG.PC.Data", "JM.KPMG.PC.Data\JM.KPMG.PC.Data.csproj", "{6EF23FBF-9FF8-471E-9BF7-142A081EC3A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JM.KPMG.PC.Test", "JM.KPMG.PC.Test\JM.KPMG.PC.Test.csproj", "{27A740C9-B224-4FA2-A79A-7B5F69A064FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JM.KPMG.PC.Business", "JM.KPMG.PC.Business\JM.KPMG.PC.Business.csproj", "{0703BCE2-A2D1-4E62-9C83-6159EB05F9BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JM.KPMG.PC.Api", "JM.KPMG.PC.Api\JM.KPMG.PC.Api.csproj", "{A3D19609-9262-448C-9602-3E99B9FC7432}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JM.KPMG.PC.Test.Int", "JM.KPMG.PC.Test.Int\JM.KPMG.PC.Test.Int.csproj", "{5B9AA5BF-AD94-494B-96DD-1623E997EE8C}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "JM.KPMG.PC.Web(2)", "JM.KPMG.PC.Web\", "{A6C13E99-FE81-4E16-B778-2221F25935F1}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_46083"
+		Debug.AspNetCompiler.PhysicalPath = "JM.KPMG.PC.Web\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_46083\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_46083"
+		Release.AspNetCompiler.PhysicalPath = "JM.KPMG.PC.Web\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_46083\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "46083"
+		SlnRelativePath = "JM.KPMG.PC.Web\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Artifacts", "Artifacts", "{D8F01891-A72C-4065-953A-90478209092D}"
+	ProjectSection(SolutionItems) = preProject
+		artifacts\JM.KPMG.PC.ReadMe.docx = artifacts\JM.KPMG.PC.ReadMe.docx
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6576CDAB-015B-48D9-AFFD-8F0430A4D44A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6576CDAB-015B-48D9-AFFD-8F0430A4D44A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6576CDAB-015B-48D9-AFFD-8F0430A4D44A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6576CDAB-015B-48D9-AFFD-8F0430A4D44A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EF23FBF-9FF8-471E-9BF7-142A081EC3A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EF23FBF-9FF8-471E-9BF7-142A081EC3A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EF23FBF-9FF8-471E-9BF7-142A081EC3A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EF23FBF-9FF8-471E-9BF7-142A081EC3A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27A740C9-B224-4FA2-A79A-7B5F69A064FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27A740C9-B224-4FA2-A79A-7B5F69A064FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27A740C9-B224-4FA2-A79A-7B5F69A064FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27A740C9-B224-4FA2-A79A-7B5F69A064FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0703BCE2-A2D1-4E62-9C83-6159EB05F9BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0703BCE2-A2D1-4E62-9C83-6159EB05F9BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0703BCE2-A2D1-4E62-9C83-6159EB05F9BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0703BCE2-A2D1-4E62-9C83-6159EB05F9BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3D19609-9262-448C-9602-3E99B9FC7432}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3D19609-9262-448C-9602-3E99B9FC7432}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3D19609-9262-448C-9602-3E99B9FC7432}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3D19609-9262-448C-9602-3E99B9FC7432}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B9AA5BF-AD94-494B-96DD-1623E997EE8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B9AA5BF-AD94-494B-96DD-1623E997EE8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B9AA5BF-AD94-494B-96DD-1623E997EE8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B9AA5BF-AD94-494B-96DD-1623E997EE8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6C13E99-FE81-4E16-B778-2221F25935F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6C13E99-FE81-4E16-B778-2221F25935F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6C13E99-FE81-4E16-B778-2221F25935F1}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6C13E99-FE81-4E16-B778-2221F25935F1}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

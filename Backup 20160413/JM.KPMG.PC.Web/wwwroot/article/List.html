@@ -1,0 +1,43 @@
+﻿<div class="container-fluid view">
+    <header>
+        <h3>Contacts</h3>
+    </header>
+    <div>
+        <a class="nav-pills hover" href="#/add-contact">Add Contact</a>
+    </div>
+    <br />
+    <br />
+    <div ng-init="isDisabled = false;">
+        <div class="row grid-header">
+            <div class="col-xs-3 col-md-3">
+                <input type="checkbox" class="checkbox checkbox-inline" ng-model="selectAll" ng-click="selectAllContact()" ng-disabled="{{contacts.length <= 0?true:false}}" />
+                Select All
+            </div>
+            <div class="col-xs-3 col-md-3">Name</div>
+            <div class="col-xs-3 col-md-3">Email Address</div>
+            <!-- <div class="col-xs-3 col-md-3">Designation</div>-->
+            <div class="col-xs-3 col-md-3">Edit/Delete</div>
+
+        </div>
+        <div class="row" ng-class-even="'grid-row'" ng-class-odd="'grid-a-row'" data-ng-repeat="contact in contacts | orderBy:'firstName'">
+            <div class="col-xs-3 col-md-3">
+                <input type="checkbox" />
+            </div>
+            <div class="col-xs-3 col-md-3">{contact.firstName + ' ' + contact.lastName}</div>
+            <div class="col-xs-3 col-md-3">{contact.emailAddress}</div>
+            <!-- <div class="col-xs-3 col-md-3">{{contact.designation}}</div>-->
+            <div class="col-xs-3 col-md-3">
+                <a data-ng-click="editContact(contact.id)" class="btn mini blue-stripe">Edit {{contact.id}}</a>
+                <a data-ng-click="removeContact(contact.id)" class="btn mini blue-stripe">Delete</a>
+            </div>
+        </div>
+    </div>
+    <br />
+    <button class="btn btn-default btn-lg" ng-model="button" ng-disabled="!selectAll" ng-click="removeAll()">Selected Delete</button>
+</div>
+
+
+<!-- <pre>$location.path() = {{addressBook.$location.path()}}</pre>
+    <pre>$route.current.templateUrl = {{addressBook.$route.current.templateUrl}}</pre>
+    <pre>$route.current.params = {{addressBook.$route.current.params}}</pre>
+    <pre>$routeParams = {{addressBook.$routeParams}}</pre>-->

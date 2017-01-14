@@ -1,0 +1,46 @@
+body {
+    margin-left: 2%;
+    background-color:ivory;
+}
+
+.login {
+    margin-top: 5%;
+    margin-left: 10%;
+    width: 30%;
+}
+
+    .login input {
+        margin-top: 3px;
+    }
+
+body > .container {
+    padding-top: 15%;
+    /*padding-top: 60px;*/
+}
+
+.news-margin {
+    margin-top: 5%;
+    margin-left: 3%;
+}
+
+.footer {
+    padding-top: 20%;
+}
+
+.default-margin {
+    margin-top: 5%;
+    margin-left: 10%;
+}
+
+.default-margin news-details {
+   width:600px;
+}
+
+
+/*.default-margin ul li:nth-child(odd) {
+    background-color: #eee;
+}
+
+.default-margin ul li:nth-child(even) {
+    background-color: #fff;
+}*/

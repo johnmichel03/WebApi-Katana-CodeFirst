@@ -1,0 +1,121 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>PC News</title>
+    <link href="bower_components/bootstrap/dist/bootstrap.min.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
+    <link href="css/grap.css" rel="stylesheet" />
+</head>
+<body>
+
+    <!--<menu-items></menu-items>-->
+    <div id="renderMenu"></div>
+
+    <br><br>
+
+    <!-- render body -->
+    <div id="renderBody"></div>
+
+    <script src="tags/menu-items.tag" type="riot/tag">
+    </script>
+
+    <script src="tags/login.tag" type="riot/tag">
+    </script>
+    <script src="tags/article-list.tag" type="riot/tag">
+    </script>
+    <script src="tags/article-details.tag" type="riot/tag">
+    </script>
+    <script src="tags/article-create.tag" type="riot/tag">
+    </script>
+    <script src="tags/about-us.tag" type="riot/tag">
+    </script>
+    <script src="tags/contact-us.tag" type="riot/tag">
+    </script>
+
+    <script src="tags/article-edit.tag" type="riot/tag">
+    </script>
+
+    <script src="tags/article-report.tag" type="riot/tag">
+    </script>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/riot/riot+compiler.min.js"></script>
+    <script src="http://mbostock.github.com/d3/d3.v2.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+
+        localStorage.setItem("IsEmployee", "Yes");
+        localStorage.setItem("IsSignIn", "No");
+
+        // load app scripts and boot Riotjs
+
+        riot.mount("menu-items")
+        riot.route.stop()
+        riot.route.start()
+        if (localStorage.getItem("IsSignIn") == "No") {
+            riot.route('/login');
+            riot.mount('#renderBody', 'login', { collection: { name: "login" } })
+        }
+        var routes = {
+            login: (action, id) => {
+                riot.mount('#renderBody', 'login', { collection: { name: "login" } })
+                riot.mount('#renderMenu', 'menu-items', { collection: { name: "login" } })   
+            },
+            about: (action, id) => {
+                riot.mount('#renderBody', 'about-us', { collection: { name: "about" } })
+            },
+            contact: (action, id) => {
+                riot.mount('#renderBody', 'contact-us', { collection: { name: "contact" } })
+            },
+            article: (action, id) => {
+                riot.mount('#renderMenu', 'menu-items', { collection: { name: "login" } })
+                switch (action) {
+                    case 'articleList':
+                        riot.mount('#renderBody', 'article-list', { colection: { name: 'articleList' } });
+                        //console.log(action + ',' + id);
+                        break;
+                    case 'articleDetails':
+                        riot.mount('#renderBody', 'article-details', { colection: { name: 'articleDetails' } });
+                        break;
+
+                    case 'articleCreate':
+                        riot.mount('#renderBody', 'article-create', { colection: { name: 'articleCreate' } });
+                        break;
+
+                    case 'articleEdit':
+                        riot.mount('#renderBody', 'article-edit', { colection: { name: 'articleEdit' } });
+                        break;
+
+                    case 'articleReport':
+                        riot.mount('#renderBody', 'article-report', { colection: { name: 'articleReport' } });
+                        break;
+                }
+            }
+        }
+        function handler(collection, id, action) {
+            routeFn = routes[collection || 'login'];
+            routeFn(id, action)
+        }
+
+        riot.route(handler)
+        riot.route.exec(handler)
+
+    </script>
+
+    <!--app footer  -->
+    <footer class="container footer">
+        <p><strong> &copy;</strong> 2016 Pressford consulting, Inc.</p>
+    </footer>
+
+</body>
+
+</html>
+
+

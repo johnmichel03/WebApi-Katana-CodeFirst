@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<head>
+    <title>list gists</title>
+    <meta charset="utf-8">
+    <style>
+        @import "//cdn.jsdelivr.net/g/bootstrap(css/bootstrap.min.css+css/bootstrap-theme.min.css)";
+
+        body {
+            padding-top: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Username" id="user">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="files container"></div>
+
+    <script src="//cdn.jsdelivr.net/g/d3js,riot@2.0(riot.min.js+compiler.min.js)">
+    </script>
+
+    <script type="riot/tag">
+        <gist>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="panel-title">
+                        <a href="{ opts.html_url}">{ opts.description }</a>
+                    </span>
+                    <div class="pull-right">
+
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <a each={ opts.files} href={ raw_url } class="badge">{ filename } :: { size }</a>&nbsp;
+                </div>
+                <div class="panel-footer">
+                    <div class="row">
+                        <p>I don't get moment, but this is about riot.</p>
+                    </div>
+                </div>
+            </div>
+        </gist>
+    </script>
+
+    <script>
+    //iife to force wait for load
+    ;(function(){
+
+      // let d3 handle the selection management
+      var files = d3.select('.files').selectAll('gist');
+
+      var delay = function(d, i){ return i * 50; };
+
+      var render = function(e, gists) {
+        if (e){
+          return console.warn(e);
+        }
+
+        files.remove();
+
+        // rebind! note the reassignment... dirty, but works!
+        files = files.data(gists.slice(0, 100), function(d){ return d.id; });
+
+        // html
+      var gist = files.enter()
+                      .append('gist')
+                      .classed({'row':true})
+                      .each( function(d){
+                        // convert object to array for template
+                        d['files'] = d3.values( d['files'] );
+                        riot.mountTo( this, 'gist', d  );
+                      });
+
+      gist.classed({row: true})
+          .style({opacity: 0})
+        .transition().delay(delay)
+          .style({opacity: 1.0});
+      };
+
+      var get = function(url){
+        d3.json(url, render);
+      };
+
+      // wire up the listener
+      var input = d3.select("#user")
+        .on("change", function(){
+          get('https://api.github.com/users/' + input.property("value") + '/gists');
+        });
+
+      // intialize with some data
+      get("./user.json");
+    })();
+    </script>
+</body>

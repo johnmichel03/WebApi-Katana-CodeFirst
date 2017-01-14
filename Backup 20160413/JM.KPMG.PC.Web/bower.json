@@ -1,0 +1,13 @@
+{
+  "name": "KMPG-PC-News",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "3.3.6",
+    "bootstrap-touch-carousel": "0.8.0",
+    "hammer.js": "2.0.6",
+    "jquery": "2.2.3",
+    "jquery-validation": "1.15.0",
+    "jquery-validation-unobtrusive": "3.2.6",
+    "riotjs": "2.3.18"
+  }
+}
